@@ -79,6 +79,9 @@ describe Classroom do
       classroom.add_student('James')
       classroom.add_student('Alice')
 
+      classroom.over_capacity
+      classroom.kick_out
+
       expect(classroom.students).to eq ['Bob', 'James', 'Cat', 'Alice']
     end
   end
