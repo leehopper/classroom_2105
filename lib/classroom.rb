@@ -1,5 +1,5 @@
 class Classroom
-  attr_reader :subject, :capacity, :students
+  attr_reader :subject, :capacity, :students, :upcase_students
 
   def initialize (subject, capacity)
     @subject = subject
@@ -9,6 +9,14 @@ class Classroom
 
   def add_student(student)
     @students << student
+  end
+
+  def yell_at_students
+    @upcase_students = []
+    @students.each do |student|
+      upcase_students << student.upcase
+    end
+    @upcase_students
   end
 
 end
