@@ -68,5 +68,18 @@ describe Classroom do
 
       expect(classroom.over_capacity).to be true
     end
+
+  # Iteration 4
+
+    it 'returns list with students kicked out' do
+      classroom = Classroom.new('History', 4)
+      classroom.add_student('Mike')
+      classroom.add_student('Megan')
+      classroom.add_student('Bob')
+      classroom.add_student('James')
+      classroom.add_student('Alice')
+
+      expect(classroom.students).to eq ['Bob', 'James', 'Cat', 'Alice']
+    end
   end
 end
