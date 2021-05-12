@@ -20,15 +20,21 @@ class Classroom
   end
 
   def over_capacity
-    student_counter = 0
+    @student_counter = 0
     @students.each do |student|
-      student_counter += 1
+      @student_counter += 1
     end
-    if @capacity >= student_counter
-      capacity_test = false
-    elsif @capacity < student_counter
-      capacity_test = true
+    if @capacity >= @student_counter
+      @capacity_test = false
+    elsif @capacity < @student_counter
+      @capacity_test = true
     end
-    capacity_test
+    @capacity_test
+  end
+
+  def kick_out
+    if @capacity_test == true
+      @students.shift
+    end
   end
 end
