@@ -8,12 +8,12 @@ describe Classroom do
       expect(classroom).to be_an_instance_of(Classroom)
     end
 
-    xit 'has a subject' do
+    it 'has a subject' do
       classroom = Classroom.new('History', 4)
       expect(classroom.subject).to eq('History')
     end
 
-    xit 'has a capacity' do
+    it 'has a capacity' do
       classroom = Classroom.new('History', 4)
       expect(classroom.capacity).to eq 4
     end
