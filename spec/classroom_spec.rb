@@ -57,5 +57,16 @@ describe Classroom do
 
       expect(classroom.over_capacity).to be false
     end
+
+    it 'returns over classroom capacity true' do
+      classroom = Classroom.new('History', 4)
+      classroom.add_student('Mike')
+      classroom.add_student('Megan')
+      classroom.add_student('Bob')
+      classroom.add_student('Eve')
+      classroom.add_student('Alice')
+
+      expect(classroom.over_capacity).to be true
+    end
   end
 end
